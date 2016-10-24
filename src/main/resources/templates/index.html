@@ -53,25 +53,66 @@
     <div class="container">
     
 
-      <div class="starter-template">
+      <div class="starter-template" >
         <h1>Go find your beers!!!</h1>
-        <p class="lead">Type in your zipcode and choose your favourite style.<br> All you get is this text and a mostly barebones HTML document.</br></p>
+        <p class="lead">Type in your zipcode and choose your favourite style. </p>
       
       	<form action="/getbeers" method="post" class="form-inline">
   			<div class="form-group">
     			<label for="Inputzipcode">Zipcode</label>
     			<input type="text" class="form-control" id="Inputzipcode" placeholder="" name="zipcode" />
   			</div>
-  			<div class="form-group">
-    			<label for="InputStyle">Style</label>
-    			<input type="text" class="form-control" id="InputStyle" placeholder="" name="styleId" />
-  			</div>
-  			<button type="submit" class="btn btn-default">Find It!</button>
+  			
+  		<form action="/getbeers" method="post">
+ 			<select name="styleId" >
+   				<option th:each="prod: ${styles}" th:value="${prod.id}" th:text="${prod.name}"></option>
+   
+ 			</select>
+ 		<br></br>
+ 				<input type="submit" />
 		</form>
-      
-      </div>
+	</form>
+			</div>
+		</div>
 
-    </div><!-- /.container -->
+
+  			<!-- <table>
+  <thead>
+    <tr>
+      <th th:text="Styles">Name</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="prod: ${styles}">
+      <td th:text="${prod.name}">Oranges</td>
+      
+    </tr>
+  </tbody>
+</table> -->
+
+
+
+
+
+
+
+<!-- 
+<form action="action_page.php">
+  <input list="styleId" name="prod.id" />
+  <datalist tx:each="prod: ${styles}" />
+    <option value="prod.name"></option>
+    
+
+		</form>
+		
+      -->
+      
+
+
+
+
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
