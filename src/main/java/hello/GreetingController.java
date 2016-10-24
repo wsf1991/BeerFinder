@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import model.Beer;
+import model.BeerStyle;
 import model.BreweryWithBeers;
 import model.LocationBreweryResponse;
 import model.LocationBreweryResponseData;
+import model.Styles;
 
 @Controller
 public class GreetingController {
@@ -26,10 +28,13 @@ public class GreetingController {
 //    }
     
 	@RequestMapping("/")
-    public String index() {
-	//TODO 
-	// call api to get the 170 style id&names
-	//  model.addAttribute("styles", specific_style_data);
+    public String index(Model model) {
+		RestTemplate restTemplate = new RestTemplate();
+		Styles styles = restTemplate.getForObject("http://api.brewerydb.com/v2/styles?key=61bccbe6de4c3438aea6236b57c8e65f", Styles.class);
+    	System.out.println(styles.toString());
+	// call http://api.brewerydb.com/v2/styles?key=61bccbe6de4c3438aea6236b57c8e65f api to get the 170 style id&names; 
+    	
+	    model.addAttribute("styles", styles.getData());
         return "index";
     }
 
