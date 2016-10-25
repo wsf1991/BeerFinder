@@ -49,8 +49,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-           <!--  <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -66,117 +64,26 @@
       	<form action="/getbeers" method="post" class="form-inline">
   			<div class="form-group">
     			<label for="Inputzipcode">Zipcode</label>
-    			<input type="text" class="form-control" id="zipcode" placeholder="" name="zipcode" />
-    		<!-- 	<button onclick="getZipCode()" >Locate me</button> -->
-    			<div>
-		
+    			<input type="text" class="form-control" id="zipcode" placeholder="loading..." name="zipcode" />
+  
+    	<div>
 		<span id="myZipCode"></span>
-	</div>
+		</div>
   			</div>
   			
-  		<form action="/getbeers" method="post">
-  			<label for="Inputstyles">Beer Styles</label>
- 			<select name="styleId" >
-   				<option value="-1" >All kinds</option>
-   				<option th:each="prod: ${styles}" th:value="${prod.id}" th:text="${prod.name}"></option>
-   
- 			</select>
- 		<br></br>
- 				<input type="submit" />
-		</form>
+	  		<form action="/getbeers" method="post">
+	  			<label for="Inputstyles">Beer Styles</label>
+	 			<select name="styleId" >
+	   				<option value="-1" >All kinds</option>
+	   				<option th:each="prod: ${styles}" th:value="${prod.id}" th:text="${prod.name}"></option>
+	   
+	 			</select>
+	 		<br></br>
+	 				<input type="submit" />
+			</form>
 	</form>
 			</div>
 		</div>
-
-
-<!-- <div>
-		<span>postal code</span>
-		<input id="zipcode" type="text" name="zipcode"/>
-		<button onclick="getZipCode()" >Search</button>
-	</div>
-	<div>
-		<span>zip code is: </span>
-		<span id="myZipCode"></span>
-	</div> -->
-
-		<!--地图 <script src="js/jquery-1.4.2.min.js"></script>
-    <script>
-        jQuery(window).ready(function(){
-            jQuery("#btnInit").click(initiate_geolocation);
-        });
- 
-        function initiate_geolocation() {
-            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);
-        }
- 
-        function handle_errors(error)
-        {
-            switch(error.code)
-            {
-                case error.PERMISSION_DENIED: alert("user did not share geolocation data");
-                break;
- 
-                case error.POSITION_UNAVAILABLE: alert("could not detect current position");
-                break;
- 
-                case error.TIMEOUT: alert("retrieving position timed out");
-                break;
- 
-                default: alert("unknown error");
-                break;
-            }
-        }
- 
-        function handle_geolocation_query(position){
-            alert('Lat: ' + position.coords.latitude +
-                  ' Lon: ' + position.coords.longitude);
-        }
-    </script>
- 
-    <div>
-    <br></br>
-      <button id="btnInit" >Find my location</button>
-    </div> 地图收-->
-
-
-  			<!-- <table>
-  <thead>
-    <tr>
-      <th th:text="Styles">Name</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr th:each="prod: ${styles}">
-      <td th:text="${prod.name}">Oranges</td>
-      
-    </tr>
-  </tbody>
-</table> -->
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<form action="action_page.php">
-  <input list="styleId" name="prod.id" />
-  <datalist tx:each="prod: ${styles}" />
-    <option value="prod.name"></option>
-    
-
-		</form>
-		
-      -->
-      
-
-
-
 
     <!-- /.container -->
 
@@ -191,37 +98,37 @@
   </body>
 
 
-<script type="text/javascript">
-	var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+		<script type="text/javascript">
+			var options = {
+		  enableHighAccuracy: true,
+		  timeout: 5000,
+		  maximumAge: 0
+		};
 
-function success(pos) {
-  var crd = pos.coords;
+		function success(pos) {
+		  var crd = pos.coords;
 
-  console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
-  console.log('More or less ' + crd.accuracy + ' meters.');
+		  console.log('Your current position is:');
+		  console.log('Latitude : ' + crd.latitude);
+		  console.log('Longitude: ' + crd.longitude);
+		  console.log('More or less ' + crd.accuracy + ' meters.');
 
-  
+		  
 
-                var point = new google.maps.LatLng(crd.latitude, crd.longitude);
-                new google.maps.Geocoder().geocode({'latLng': point}, function (res, status) {
-                        var zip = res[0].formatted_address.match(/,\s\w{2}\s(\d{5})/);
-                        // alert('Zip code is ' +  zip[1]);
-                        document.getElementById("zipcode").value = zip[1];
-                });
+		                var point = new google.maps.LatLng(crd.latitude, crd.longitude);
+		                new google.maps.Geocoder().geocode({'latLng': point}, function (res, status) {
+		                        var zip = res[0].formatted_address.match(/,\s\w{2}\s(\d{5})/);
+		                        // alert('Zip code is ' +  zip[1]);
+		                        document.getElementById("zipcode").value = zip[1];
+		                });
 
-};
+		};
 
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-};
+		function error(err) {
+		  console.warn('ERROR(' + err.code + '): ' + err.message);
+		};
 
-navigator.geolocation.getCurrentPosition(success, error, options);
-</script>
+		navigator.geolocation.getCurrentPosition(success, error, options);
+		</script>
 
 </html>
