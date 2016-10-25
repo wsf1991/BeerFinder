@@ -13,16 +13,38 @@
     
   <table class="table table-striped table-bordered">
   <tr>
-  <th>Beer ID</th>
   <th>Beer Name</th>
   <th>Style Name</th>
+  <th>Share it!</th>
   
   </tr>
    
   <tr th:each="prod: ${beerNames}">
-  <td th:text="${prod.id}"></td>
   <td th:text="${prod.name}"></td>
   <td th:text="${prod.style.name}"></td>
+  <td >
+  <!-- <a class="twitter-share-button"
+  href="https://twitter.com/share"
+  data-size="large"
+  data-url="https://dev.twitter.com/web/tweet-button"
+  data-via="twitterdev"
+  data-related="twitterapi,twitter"
+  data-hashtags="example,demo"
+  data-text="custom share text"
+  data-text="I like" + th:text="${prod.name}" + ", its style is "+ th:text="${prod.style.name}" >
+
+Share in twitter!
+</a> -->
+  <a href="https://twitter.com/share" 
+    class="twitter-share-button" 
+    data-text="${prod.style.name}"
+   >
+
+    Tweet</a> 
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</td>
   </tr>
   
   
