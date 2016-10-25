@@ -22,7 +22,7 @@ I used css bootstrap to make the website responsive.
 #Architecture
 The web application uses MVC web architecture.
 
-![architecture](/docs/architecture.png)
+![architecture](https://github.com/MassaLx/BeerFinder/blob/master/src/main/resources/Architecture.png)
 
 The browser(front-end) sends request to controller(back-end). The controller fetches data via API. Then the model injects data to template to render into view html.
 
