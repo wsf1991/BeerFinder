@@ -17,6 +17,7 @@ I used css bootstrap to make the website responsive.
 3. [Features](#features)
 4. [Roadmap](#roadmap)
 5. [Contributing to the project](#contributing)
+6. [Reference](#reference)
 
 
 #Architecture
@@ -79,3 +80,20 @@ I use the [GitHub issue tracker](https://github.com/MassaLx/BeerFinder/issues) t
 3. Implement your feature or bug fix.
 4. Commit and push your changes.
 5. Submit a pull request (to the development branch).
+
+#Reference
+
+1. https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
+   Use the API to get current location.
+2. https://dev.twitter.com/web/tweet-button/parameters
+  Make the share button.
+3. https://jsonformatter.curiousconcept.com/
+  Check the json data.
+4. http://www.w3schools.com/
+  Set up the frontend.
+5. http://getbootstrap.com/css/
+  Set up the frontend.
+6. https://spring.io/guides/gs/spring-boot/#scratch
+  Set up the backend.
+7. https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
+  Set up the backend.
