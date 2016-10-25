@@ -70,7 +70,7 @@ The master branch has the latest stable release. development happens in the deve
 
 ##Submitting an Issue
 
-We use the [GitHub issue tracker](https://github.com/MassaLx/BeerFinder/issues) to track bugs and features. Ideally, a bug report should include a pull request with failing specs, and maybe even a fix!
+I use the [GitHub issue tracker](https://github.com/MassaLx/BeerFinder/issues) to track bugs and features. Ideally, a bug report should include a pull request with failing specs, and maybe even a fix!
 
 ##Submitting a Pull Request
 
