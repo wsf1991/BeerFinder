@@ -1,0 +1,21 @@
+{
+  "name": "BeerFinder",
+  "scripts": {
+  },
+  "env": {
+    "BREWERYDB_API_KEY": "61bccbe6de4c3438aea6236b57c8e65f"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
